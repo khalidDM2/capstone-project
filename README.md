@@ -1,26 +1,19 @@
 # Capstone Project
 
-A starter repository for a capstone project built with the AI-Assisted Development workflow in mind. This project currently acts as a clean foundation for future implementation, documentation, and iteration.
+A React user settings form built with the AI-Assisted Development workflow in mind.
 
 ## Overview
-This repository is intended to hold the project work for the capstone effort. At the moment, it contains the base project scaffolding and licensing files, but it does not yet include the full application code or production-ready runtime setup.
+This repository contains a small Vite-powered React app with a validated user settings form.
 
-## Why this README matters
-The original version was too minimal to help a new contributor understand:
-- what the project is for,
-- what the current status is,
-- how to set up the environment,
-- and how to work with the repository as it evolves.
-
-This updated version adds context, makes the project status explicit, and gives a clear onboarding path without pretending the app is already implemented.
+The form validates full name, email, and notification preferences using React Hook Form and Zod.
 
 ## Current project status
-This repository is currently in a foundational stage.
+The project currently includes a runnable React settings form.
 
 - Node.js LTS is the expected runtime environment.
-- The repo includes the standard project metadata and legal files.
-- Application source code, dependencies, and runtime scripts are not yet added.
-- The project is ready to be expanded into a concrete implementation.
+- The form is implemented in `src/UserSettingsForm.jsx`.
+- Validation uses Zod through `@hookform/resolvers`.
+- Valid submissions are passed to the form's `onSave` callback.
 
 ## Prerequisites
 Before working in this repository, make sure you have the following installed:
@@ -36,8 +29,10 @@ Before working in this repository, make sure you have the following installed:
    cd capstone-project
 3. Verify that Node.js is available:
    node --version
-4. If a package configuration is added later, install dependencies:
+4. Install dependencies:
    npm install
+5. Start the development server:
+   npm run dev
 
 ## Recommended project structure
 As the project grows, a typical structure might look like this:
@@ -54,9 +49,9 @@ This structure is a good default for keeping the repository maintainable as the 
 ### For a contributor starting on the project
 1. Open the repository in VS Code.
 2. Review the project docs and any implementation notes before making changes.
-3. Check whether there is an existing package configuration before assuming commands are available.
+3. Review the package scripts before choosing development or validation commands.
 4. Create or update feature work in the appropriate source folder.
-5. Run project checks when they are added, such as installing dependencies, running tests, and validating builds.
+5. Run `npm run build` to validate the production app.
 
 ### For local development workflow
 Use a consistent workflow as the project grows:
@@ -68,15 +63,14 @@ Use a consistent workflow as the project grows:
 5. Update documentation if behavior or usage changes.
 6. Commit with a clear message and open a pull request.
 
-### When the project becomes runnable
-Once the application code and package configuration are present, the normal workflow should be:
+### Running and validating the project
+The normal workflow is:
 
 - install dependencies with npm install,
-- start the app with the project’s development command,
-- run lint and test commands before finalizing changes,
+- start the app with `npm run dev`,
+- create a production build with `npm run build`,
 - and use the repo’s documentation as the single source of truth for behavior.
 
-This repo intentionally does not assume those commands exist yet, because the actual application has not been implemented.
 
 ## Development guidelines
 - Keep the codebase organized and easy to navigate.
@@ -98,4 +92,4 @@ Contributions are welcome once implementation begins. The expected workflow is:
 This project is licensed under the terms included in the repository’s LICENSE files.
 
 ## Summary
-This repository is currently a clean starting point for a capstone project. The README now establishes a clearer foundation for future work by documenting the project’s current state, setup expectations, and the usage pattern contributors should follow as the project evolves.
+This repository contains a runnable React user settings form with client-side validation and an `onSave` callback for integrating submission handling.
